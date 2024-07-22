@@ -15,6 +15,9 @@ body {
   background-size: cover;
 }
 
+.card-title {
+    color: #ffc233; /* Example color code */
+}
 
 /* Responsive Features */
 
