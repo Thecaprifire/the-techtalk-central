@@ -1,22 +1,42 @@
-.post-container {
-  transition: background-color 0.3s;
-}
-
-.post-container:hover {
-  border-right: 1em solid #656565;
-  background-color: rgba(126, 126, 126, 0.2);
-  border-radius: 0.5em;
+:root {
+  --mint-green-light: #e0f7ea;
+  --mint-green: #98ff98;
+  --mint-green-dark: #3cb371;
+  --mint-green-text: #006400;
 }
 
 body {
-  background-image: url('');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: var(--mint-green-light);
+  color: var(--mint-green-text);
+}
+
+.navbar, footer {
+  background-color: var(--mint-green-dark);
+  color: var(--mint-green-light);
+}
+
+.navbar-brand, .nav-link, footer h5, footer h6 {
+  color: var(--mint-green-light) !important;
+}
+
+.nav-link:hover {
+  color: var(--mint-green) !important;
+}
+
+.post-container {
+  transition: background-color 0.3s, border-right 0.3s;
+  background-color: var(--mint-green-light);
+  border-right: 1em solid var(--mint-green-dark);
+  border-radius: 0.5em;
+}
+
+.post-container:hover {
+  background-color: var(--mint-green);
+  border-right-color: var(--mint-green-dark);
 }
 
 .card-title {
-    color: #ffc233; /* Example color code */
+  color: var(--mint-green-text);
 }
 
 /* Responsive Features */
