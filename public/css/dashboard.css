@@ -1,42 +1,45 @@
 :root {
-  --mint-green-light: #e0f7ea;
-  --mint-green: #98ff98;
-  --mint-green-dark: #3cb371;
-  --mint-green-text: #006400;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray-light: #d3d3d3;
+  --color-gray-dark: #696969;
+  --color-brown: #8b4513;
+  --color-dark-yellow: #b8860b;
+  --color-text: #000000; /* Main text color */
 }
 
 body {
-  background-color: var(--mint-green-light);
-  color: var(--mint-green-text);
+  background-color: var(--color-gray-light);
+  color: var(--color-text);
 }
 
 .navbar, footer {
-  background-color: var(--mint-green-dark);
-  color: var(--mint-green-light);
+  background-color: var(--color-gray-dark);
+  color: var(--color-white);
 }
 
 .navbar-brand, .nav-link, footer h5, footer h6 {
-  color: var(--mint-green-light) !important;
+  color: var(--color-white) !important;
 }
 
 .nav-link:hover {
-  color: var(--mint-green) !important;
+  color: var(--color-dark-yellow) !important;
 }
 
 .post-container {
   transition: background-color 0.3s, border-right 0.3s;
-  background-color: var(--mint-green-light);
-  border-right: 1em solid var(--mint-green-dark);
+  background-color: var(--color-gray-light);
+  border-right: 1em solid var(--color-gray-dark);
   border-radius: 0.5em;
 }
 
 .post-container:hover {
-  background-color: var(--mint-green);
-  border-right-color: var(--mint-green-dark);
+  background-color: var(--color-gray-dark);
+  border-right-color: var(--color-brown);
 }
 
 .card-title {
-  color: var(--mint-green-text);
+  color: var(--color-dark-yellow);
 }
 
 /* Responsive Features */
