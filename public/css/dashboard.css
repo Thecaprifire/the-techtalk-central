@@ -6,6 +6,7 @@
   --color-brown: #8b4513;
   --color-dark-yellow: #b8860b;
   --color-text: #000000; /* Main text color */
+  --color-text-dark: #333333; /* Darker text color */
 }
 
 body {
@@ -40,6 +41,10 @@ body {
 
 .card-title {
   color: var(--color-dark-yellow);
+}
+
+.text-decoration-none.text-reset, .text-decoration-none.text-reset p {
+  color: var(--color-text-dark) !important;
 }
 
 /* Responsive Features */
