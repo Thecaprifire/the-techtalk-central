@@ -2,37 +2,37 @@ const { Comment } = require("../models");
 
 const commentData = [
   {
-    comment_text: "Nice idea!",
+    comment_text: "Did you try turning it off and on again?",
     user_id: 1,
     post_id: 1,
   },
   {
-    comment_text: "Cool!",
+    comment_text: "I swear it worked on my machine!",
     user_id: 2,
     post_id: 1,
   },
   {
-    comment_text: "That's what I thought.",
+    comment_text: "When in doubt, blame the compiler.",
     user_id: 3,
     post_id: 1,
   },
   {
-    comment_text: "Great work!",
+    comment_text: "Real coders don’t use semicolons.",
     user_id: 4,
     post_id: 1,
   },
   {
-    comment_text: "That's kinda boring.",
+    comment_text: "Is it a bug or a feature?",
     user_id: 5,
     post_id: 1,
   },
   {
-    comment_text: "Good job.",
+    comment_text: "If it compiles, ship it.",
     user_id: 1,
     post_id: 2,
   },
   {
-    comment_text: "Same with me.",
+    comment_text: "99 little bugs in the code, 99 bugs in the code...",
     user_id: 2,
     post_id: 2,
   }
