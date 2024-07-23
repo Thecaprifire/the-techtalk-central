@@ -43,7 +43,19 @@ body {
   color: var(--color-dark-yellow);
 }
 
-.text-decoration-none.text-reset, .text-decoration-none.text-reset p {
+/* Override Bootstrap text-reset class */
+.text-decoration-none.text-reset,
+.text-decoration-none.text-reset p {
+  color: var(--color-text-dark) !important;
+}
+
+/* Ensure <p> tags inside .text-decoration-none.text-reset are also styled */
+.text-decoration-none.text-reset p {
+  color: var(--color-text-dark) !important;
+}
+
+/* General <p> styling if needed */
+p {
   color: var(--color-text-dark) !important;
 }
 
