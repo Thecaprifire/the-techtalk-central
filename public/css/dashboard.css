@@ -12,6 +12,10 @@
 body {
   background-color: var(--color-gray-light);
   color: var(--color-text);
+  background-image: url('/images/background.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .navbar, footer {
