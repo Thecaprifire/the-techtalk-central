@@ -1,7 +1,7 @@
 :root {
   --color-white: #ffffff;
   --color-black: #000000;
-  --color-gray-light: #d3d3d3;
+  --color-gray-light: #929292;
   --color-gray-dark: #696969;
   --color-brown: #8b4513;
   --color-dark-yellow: #b8860b;
@@ -56,7 +56,7 @@ body {
 
 /* General <p> styling if needed */
 p {
-  color: var(--color-text-dark) !important;
+  color: var(--color-text-light) !important;
 }
 
 /* Responsive Features */
