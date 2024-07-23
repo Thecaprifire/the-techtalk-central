@@ -47,6 +47,14 @@ body {
   color: var(--color-dark-yellow);
 }
 
+.card-header {
+  background-color: #c8d745;
+}
+
+.comment {
+  color: var(--color-dark-yellow);
+}
+
 /* Override Bootstrap text-reset class */
 .text-decoration-none.text-reset,
 .text-decoration-none.text-reset p {
