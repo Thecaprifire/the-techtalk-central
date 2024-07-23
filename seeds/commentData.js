@@ -3,7 +3,7 @@ const { Comment } = require("../models");
 const commentData = [
   {
     comment_text: "Did you try turning it off and on again?",
-    user_id: 1,
+    user_id: 6,
     post_id: 1,
   },
   {
@@ -35,7 +35,17 @@ const commentData = [
     comment_text: "99 little bugs in the code, 99 bugs in the code...",
     user_id: 2,
     post_id: 2,
-  }
+  },
+  {
+    comment_text: "Why does it work only on Fridays? It must be on a weekend bug vacation!",
+    user_id: 3,
+    post_id: 1,
+  },
+  {
+    comment_text: "The real bug is trying to understand why tabs and spaces are such a big deal.",
+    user_id: 4,
+    post_id: 2,
+  },
 ];
 
 const seedComments = () => Comment.bulkCreate(commentData);
