@@ -73,11 +73,11 @@ THEN I am able to view posts and comments but I am prompted to log in again befo
 
 ## Installation Process
 1.	Configure Environment Variables:
-	-	Enter your login credentials and other environment-specific settings in the `.env' file.
+	-	Enter your login credentials and other environment-specific settings in the `.env` file.
 2.	Open Integrated Terminal:
 	-	Launch an integrated terminal from your editor.
 3.	Install Dependencies:
-	-	Install the essential packages to initialize the application by running 'npm install'. The key packages used include:
+	-	Install the essential packages to initialize the application by running `npm install`. The key packages used include:
 	     - bcrypt: [Version 5.1.1](https://www.npmjs.com/package/bcrypt)
          - bcryptjs: [Version 2.4.3](https://www.npmjs.com/package/bcryptjs)
          - connect-session-sequelize: [Version 7.1.7](https://www.npmjs.com/package/connect-session-sequelize)
