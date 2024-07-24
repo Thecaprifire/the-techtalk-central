@@ -1,18 +1,18 @@
 <main class="container mt-5">
   <div class="row">
     <div class="col-12">
-      <h1 class="mb-4">My Dashboard</h1>
-      <a href="/newpost" class="btn btn-primary">Create a New Blog Post</a>
+      <h1 class="mb-4 dashboard-font">My Dashboard</h1>
+      <a href="/newpost" class="btn btn-info">Create a New Blog Post</a>
     </div>
   </div>
   <br>
-  <h1 class="mb-4">The write-ups:</h1>
+  <h1 class="mb-4 write-font">The Manuscripts:</h1>
   {{#each posts}}
     <div class="post-container post mb-3">
-      <h2><a href="/post/{{id}}" class="text-decoration-none text-reset">{{title}}</a></h2>
-      <p>Authored by: {{user.username}} | On {{format_date createdAt}}</p>
-      <a href="/editpost/{{id}}" class="btn btn-warning">Edit Post</a>
-      <button class="btn btn-danger delete-post" data-post-id="{{id}}">Delete</button>
+      <h2><a href="/post/{{id}}" class="text-decoration-none text-reset custom-text-color title-font">{{title}}</a></h2>
+      <p>Authored by: {{user.username}}  On {{format_date createdAt}}</p>
+      <a href="/editpost/{{id}}" class="btn btn-info">Edit Post</a>
+      <button class="btn btn-secondary delete-post" data-post-id="{{id}}">Delete</button>
     </div>
   {{/each}}
 </main>

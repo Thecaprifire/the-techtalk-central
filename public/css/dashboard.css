@@ -1,74 +1,65 @@
-:root {
-  --color-white: #ffffff;
-  --color-black: #000000;
-  --color-gray-light: #929292;
-  --color-gray-dark: #696969;
-  --color-brown: #8b4513;
-  --color-dark-yellow: #b8860b;
-  --color-text: #000000; /* Main text color */
-  --color-text-dark: #333333; /* Darker text color */
+.post-container {
+  transition: background-color 0.3s;
+}
+
+.post-container:hover {
+  border-right: 1em solid #656565;
+  background-color: rgba(126, 126, 126, 0.2);
+  border-radius: 0.5em;
 }
 
 body {
-  background-color: var(--color-gray-light);
-  color: var(--color-text);
   background-image: url('/images/background.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.navbar, footer {
-  background-color: var(--color-gray-dark);
-  color: var(--color-white);
+.bg-custom {
+  background-color: #48CAE4 !important;
 }
 
-.navbar-brand, .nav-link, footer h5, footer h6 {
-  color: var(--color-white) !important;
+.custom-text-color {
+  color: #00F7F4 !important;
 }
 
-.nav-link:hover {
-  color: var(--color-dark-yellow) !important;
+.title-font {
+  font-family: 'Arial', sans-serif; 
+  font-size: 1.5rem; 
+  font-weight: bold; 
 }
 
-.post-container {
-  transition: background-color 0.3s, border-right 0.3s;
-  background-color: var(--color-gray-light);
-  border-right: 1em solid var(--color-gray-dark);
-  border-radius: 0.5em;
+.write-font {
+  font-family: 'Arial', sans-serif; 
+  font-size: 2rem; 
 }
 
-.post-container:hover {
-  background-color: var(--color-gray-dark);
-  border-right-color: var(--color-brown);
+.dashboard-font {
+  font-family: 'monospace', Courier;
+  font-size: 3rem; 
+  font-weight: bold; 
 }
 
-.card-title {
-  color: var(--color-dark-yellow);
+.navbar-font {
+  font-family: 'Georgia', Courier;
+  font-weight: bold; 
 }
 
-.card-header {
-  background-color: #c8d745;
+.post-title-font {
+  font-family: 'Arial', sans-serif; 
+  font-size: 3rem; 
+  font-weight: bolder;
 }
 
-.comment {
-  color: var(--color-dark-yellow);
+.content-font {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-/* Override Bootstrap text-reset class */
-.text-decoration-none.text-reset,
-.text-decoration-none.text-reset p {
-  color: var(--color-text-dark) !important;
-}
-
-/* Ensure <p> tags inside .text-decoration-none.text-reset are also styled */
-.text-decoration-none.text-reset p {
-  color: var(--color-text-dark) !important;
-}
-
-/* General <p> styling if needed */
-p {
-  color: var(--color-text-light) !important;
+.comment-history-font {
+  font-family: Georgia, 'Times New Roman', Times, serif; 
+  font-size: 2.5rem; 
 }
 
 /* Responsive Features */
