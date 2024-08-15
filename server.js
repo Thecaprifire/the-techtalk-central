@@ -15,15 +15,15 @@ const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({ helpers });
 
 const sess = {
-  secret: process.env.SECRET || "Super secret secret", // Use env variable for secret
+  secret: "Super secret secret",
   cookie: {
     maxAge: 1000 * 60 * 60 * 24, // 1 day
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production", // Ensure cookies are secure in production
+    secure: false,
     sameSite: "strict",
   },
   resave: false,
-  saveUninitialized: false, // Consider setting this to false for better compliance with GDPR
+  saveUninitialized: true,
   store: new SequelizeStore({
     db: sequelize,
   }),
