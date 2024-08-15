@@ -86,7 +86,9 @@ router.get("/signup", (req, res) => {
 //render the new post page
 router.get("/newpost", (req, res) => {
   if (req.session.logged_in) {
-    res.render("newPost");
+    res.render("newPost", {
+      logged_in: req.session.logged_in,
+    });
     return;
   }
   res.redirect("/login");
