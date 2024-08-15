@@ -1,4 +1,3 @@
-const path = require("path");
 const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
@@ -12,7 +11,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({ helpers: require("./utils/helpers") });
 
 const sess = {
   secret: "Super secret secret",
@@ -29,18 +28,24 @@ const sess = {
   }),
 };
 
+// Using session middleware with session object
 app.use(session(sess));
 
-// Inform Express.js on which template engine to use
+// Parsing incoming JSON and URL-encoded data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// IMPORTANT FOR PUBLIC FOLDERS - serving static files such as images from public directory
+app.use(express.static("public"));
+
+// Setting up Handlebars.js as the template engine
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "public")));
-
+// Using routes from controller
 app.use(routes);
 
+// Syncing sequelize models with database and starting server
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
+  app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
 });
