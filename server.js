@@ -1,24 +1,26 @@
-// Importing required modules and dependencies
+const path = require("path");
 const express = require("express");
 const session = require("express-session");
-const SequelizeStore = require("connect-session-sequelize")(session.Store);
-const routes = require("./controllers");
-const sequelize = require("./config/connection");
 const exphbs = require("express-handlebars");
-const hbs = exphbs.create({ helpers: require("./utils/helpers") });
+const routes = require("./controllers");
+const helpers = require("./utils/helpers");
 
-// Creating express app and setting port
+const sequelize = require("./config/connection");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Setting up session object with secret, cookie, and store
+// Set up Handlebars.js engine with custom helpers
+const hbs = exphbs.create({ helpers });
+
 const sess = {
-  secret: 'Super secret secret',
+  secret: "Super secret secret",
   cookie: {
     maxAge: 1000 * 60 * 60 * 24, // 1 day
-    secure: false, // Cookie will be sent over HTTP and HTTPS
-    httpOnly: true, // Ensures the cookie is sent only over HTTP(S), not accessible via JavaScript
-    sameSite: 'strict', // Ensures the cookie is only sent for requests from the same site
+    httpOnly: true,
+    secure: false,
+    sameSite: "strict",
   },
   resave: false,
   saveUninitialized: true,
@@ -27,29 +29,18 @@ const sess = {
   }),
 };
 
-// Using session middleware with session object
 app.use(session(sess));
-// Parsing incoming JSON and URL-encoded data
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-// IMPORTANT FOR PUBLIC FOLDERS - serving static files such as images from public directory
-app.use(express.static("public"));
+// Inform Express.js on which template engine to use
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
-// Using session middleware again with a different session object
-app.use(
-  session({
-    secret: process.env.SECRET,
-    store: new SequelizeStore({ db: sequelize }),
-    resave: false,
-    saveUninitialized: false,
-  })
-);
-// Using routes from controller
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
+
 app.use(routes);
-// Syncing sequelize models with database and starting server
+
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
+  app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
 });
