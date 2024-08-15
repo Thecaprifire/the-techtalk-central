@@ -14,6 +14,7 @@ This repository contains a Tech Blog CMS-style site built from scratch, designed
   * [User Story](#user-story)
   * [Acceptance Criteria](#acceptance-criteria)
   * [Installation Process](#installation-process)
+  * [Actual Website Link](#actual-website-link)
   * [Walkthrough Video](#walkthrough-video)
   * [Screenshots](#screenshots)
   * [Resources](#resources)
@@ -97,6 +98,11 @@ THEN I am able to view posts and comments but I am prompted to log in again befo
 7.	Test the Application:
 	-	Verify the application’s functionality by accessing it through Render.
 
+
+## Actual Website Link:
+[The Techtalk Central](https://the-techtalk-central.onrender.com)
+
+
 ## Walkthrough Video:
 [Click Here to Watch](https://youtu.be/HB062ez_-Jk)
 
@@ -125,6 +131,7 @@ THEN I am able to view posts and comments but I am prompted to log in again befo
 - handlebars: [Version 4.7.8](https://www.npmjs.com/package/handlebars)
 - sequelize:[Version 6.37.3](https://www.npmjs.com/package/sequelize)
   
+
 ## Questions
   Contact the author with any questions!<br>
   Github link: [Thecaprifire](https://github.com/Thecaprifire)<br>
