@@ -95,7 +95,7 @@ router.get("/newpost", (req, res) => {
 });
 
 //render the edit post page
-router.get("/editpost/:id", async (req, res) => {
+router.get("/editPost/:id", async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
@@ -109,7 +109,7 @@ router.get("/editpost/:id", async (req, res) => {
 
     const post = postData.get({ plain: true });
 
-    res.render("editpost", {
+    res.render("editPost", {
       ...post,
       logged_in: req.session.logged_in,
     });
