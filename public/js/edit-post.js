@@ -43,10 +43,10 @@ const deleteTechPostFormHandler = async (event) => {
 };
 
 // Event listeners
-const updateTechPostButton = document.querySelector("#update-tech-post");
+const updateTechPostButton = document.querySelector(".update-tech-post-form");
 
 if (updateTechPostButton) {
-  updateTechPostButton.addEventListener("click", updateTechPostFormHandler);
+  updateTechPostButton.addEventListener("submit", updateTechPostFormHandler);
 }
 
 const deleteTechPostButton = document.querySelector("#delete-tech-post");
