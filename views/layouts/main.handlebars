@@ -79,11 +79,13 @@
     document.addEventListener('DOMContentLoaded', function() {
       console.log('Script running...');
       document.querySelectorAll('.post-date').forEach(function(element) {
-        const dateText = element.textContent.trim();
-        console.log('Original date text:', dateText);
+      const dateText = element.textContent.trim();
+      console.log('Original date text:', dateText);
 
-        const utcDate = new Date(dateText);
-        if (!isNaN(utcDate.getTime())) {
+      // Check if dateText is a valid ISO date string
+      const utcDate = new Date(dateText);
+      if (!isNaN(utcDate.getTime())) {
+          // Format date using moment.js
           const localDate = moment.utc(utcDate).local().format("MM/DD/YYYY [at] HH:mm");
           element.textContent = localDate;
           console.log('Formatted date:', localDate);
