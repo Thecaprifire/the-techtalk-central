@@ -76,23 +76,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data.min.js"></script>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      console.log('Script running...');
-      document.querySelectorAll('.post-date').forEach(function(element) {
-      const dateText = element.textContent.trim();
-      console.log('Original date text:', dateText);
-
-      // Check if dateText is a valid ISO date string
-      const utcDate = new Date(dateText);
-      if (!isNaN(utcDate.getTime())) {
-          // Format date using moment.js
-          const localDate = moment.utc(utcDate).local().format("MM/DD/YYYY [at] HH:mm");
-          element.textContent = localDate;
-          console.log('Formatted date:', localDate);
-        } else {
-          console.error('Invalid date:', dateText);
-        }
-      });
+    // Convert UTC date strings to local time and update the text content
+    document.querySelectorAll('.post-date').forEach(function(element) {
+      const utcDate = new Date(element.textContent); 
+      element.textContent = utcDate.toLocaleString(); 
     });
     </script>
   </body>
